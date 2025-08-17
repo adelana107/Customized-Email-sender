@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready to Build the Future? - Software Engineering Program</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        .header-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .tagline {
+            text-align: center;
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: white;
+            padding: 18px 20px;
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 32px;
+        }
+        .footer {
+            background-color: #1a365d;
+            color: white;
+            padding: 20px;
+            font-size: 13px;
+            text-align: center;
+        }
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: #a0c4ff;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .contact-item a {
+            color: #a0c4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        .divider {
+            border-top: 1px solid #e2e8f0;
+            margin: 28px 0;
+        }
+        .text-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .highlight {
+            color: #1a365d;
+            font-weight: 600;
+        }
+        .program-item {
+            margin-bottom: 20px;
+        }
+        .program-item-title {
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .program-item-title:before {
+            content: "✓";
+            color: #3182ce;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .personal-message {
+            background-color: #f0f9ff;
+            border: 1px solid #bee3f8;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 20px 0;
+            color: #2d3748;
+        }
+        h2 {
+            color: #1a365d;
+            font-size: 20px;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 8px;
+            margin-top: 28px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <img src="https://res.cloudinary.com/dnfur7b2p/image/upload/v1754651225/SOFTWARE_ENGINEERING_IMAGE_cd6vy7.png" 
+             alt="Software Engineering Program" 
+             class="header-img">
+        
+        <h1 class="tagline">Ready to Build the Future?</h1>
+
+        <div class="content">
+            <div class="text-box">
+                <p><strong class="highlight">Dear {{name}},</strong></p>
+                <p>{{message}}</p>
+            </div>
+
+            <div class="program-item">
+                <p><strong class="highlight">Welcome to the Software Engineering Program</strong></p>
+                <p>Here's what you'll master in this comprehensive program:</p>
+                <div class="program-item-title">Core Programming Fundamentals</div>
+                <p>Build strong foundations in algorithms, data structures, and problem-solving techniques.</p>
+            </div>
+
+            <div class="program-item">
+                <div class="program-item-title">Modern Development Stacks</div>
+                <p>Master full-stack development with industry-standard technologies and frameworks.</p>
+            </div>
+
+            <div class="program-item">
+                <div class="program-item-title">Software Architecture</div>
+                <p>Learn to design scalable, maintainable systems with proper patterns and principles.</p>
+            </div>
+
+            <div class="program-item">
+                <div class="program-item-title">Agile Methodologies</div>
+                <p>Develop software using Scrum, Kanban, and other agile practices used by top tech companies.</p>
+            </div>
+
+            <div class="program-item">
+                <div class="program-item-title">Testing & Quality Assurance</div>
+                <p>Implement comprehensive testing strategies including unit, integration, and end-to-end testing.</p>
+            </div>
+
+            <div class="program-item">
+                <div class="program-item-title">Real-World Projects</div>
+                <p>Build portfolio-worthy applications that solve actual problems, using professional workflows.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-box">
+                <p>This program transforms you into a complete software engineer, capable of designing, building, and deploying production-grade applications.</p>
+                <p>Through hands-on projects and expert mentorship, you'll gain the skills that top employers demand in today's competitive tech landscape.</p>
+                <p class="highlight">You're not just learning to code - you're becoming an engineer.</p>
+                <p>Let's begin this transformative journey together.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-box" style="text-align: center;">
+                <p><strong>Warmest regards,</strong><br>
+                <span class="highlight">The Cyclobold Team</span></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 Cyclobold. All rights reserved.</p>
+            <div class="contact-row">
+                <div class="contact-item">+234 803 990 6571</div>
+                <span>|</span>
+                <div class="contact-item"><a href="mailto:info@cyclobold.com">info@cyclobold.com</a></div>
+                <span>|</span>
+                <div class="contact-item"><a href="http://www.cyclobold.com">www.cyclobold.com</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

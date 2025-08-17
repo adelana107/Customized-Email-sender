@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Skills for Tomorrow - CloudDevOps Program</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        .header-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .tagline {
+            text-align: center;
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: white;
+            padding: 16px 20px;
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 32px;
+        }
+        .footer {
+            background-color: #1a365d;
+            color: white;
+            padding: 20px;
+            font-size: 13px;
+            text-align: center;
+        }
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: #a0c4ff;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .contact-item a {
+            color: #a0c4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        .divider {
+            border-top: 1px solid #e2e8f0;
+            margin: 28px 0;
+        }
+        .text-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .highlight {
+            color: #1a365d;
+            font-weight: 600;
+        }
+        .program-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 15px;
+        }
+        .program-item:before {
+            content: "•";
+            color: #3182ce;
+            font-size: 24px;
+            position: absolute;
+            left: -5px;
+            top: 0;
+        }
+        .program-item-title {
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .program-item-title:before {
+            content: "✓";
+            color: #3182ce;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        h2 {
+            color: #1a365d;
+            font-size: 20px;
+            border-bottom: 2px solid #4299e1;
+            padding-bottom: 8px;
+            margin-top: 28px;
+            font-weight: 600;
+        }
+        .program-section {
+            border-left: 3px solid #3182ce;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <img src="https://res.cloudinary.com/dnfur7b2p/image/upload/v1754642290/CLOUDDEVOPS_IMAGE_hggtku.png" 
+             alt="CloudDevOps Program" 
+             class="header-img">
+        
+        <h1 class="tagline">Essential Skills for Tomorrow</h1>
+
+        <div class="content">
+            <div class="text-box">
+                <p><strong class="highlight">Dear {{name}},</strong></p>
+                <p>{{message}}</p>
+            </div>
+
+            <div class="program-section">
+                <p><strong class="highlight">Welcome to the CloudDevOps Program</strong></p>
+                <p>Here's a glimpse of the powerful journey ahead:</p>
+                
+                <div class="program-item">
+                    <div class="program-item-title">DevOps Foundations</div>
+                    <p>Learn how development and operations come together to deliver faster, smarter, and more reliable systems.</p>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-item-title">Cloud Platforms</div>
+                    <p>Master the core services of major cloud providers like AWS, Azure, and GCP, and understand how to deploy, scale, and secure apps in the cloud.</p>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-item-title">Containers & Orchestration</div>
+                    <p>Get hands-on with Docker and Kubernetes, the backbone of modern infrastructure.</p>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-item-title">CI/CD Pipelines</div>
+                    <p>Automate deployments, streamline code integration, and ship updates like the pros.</p>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-item-title">Infrastructure as Code (IaC)</div>
+                    <p>Build and manage your entire infrastructure using tools like Terraform, scalable, repeatable, and version-controlled.</p>
+                </div>
+
+                <div class="program-item">
+                    <div class="program-item-title">Real Projects & Industry Tools</div>
+                    <p>We don't just teach theory. You'll use real-world tools like Git, Jenkins, Ansible, and more, all while building projects that show what you can do.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-box">
+                <p>More than anything, this course is about becoming the engineer who bridges the gap between development and operations, someone who understands systems end-to-end and can lead in a tech-driven world.</p>
+                <p>We're excited to walk this journey with you. There will be challenges, yes, but even more growth, support, and wins. You're not just learning Cloud/DevOps...</p>
+                <p class="highlight">You're becoming Cloud/DevOps.</p>
+                <p>Let's get to work. The pipelines await.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-box" style="text-align: center;">
+                <p><strong>Warmest regards,</strong><br>
+                <span class="highlight">The Cyclobold Team</span></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 Cyclobold. All rights reserved.</p>
+            <div class="contact-row">
+                <div class="contact-item">+234 803 990 6571</div>
+                <span>|</span>
+                <div class="contact-item"><a href="mailto:info@cyclobold.com">info@cyclobold.com</a></div>
+                <span>|</span>
+                <div class="contact-item"><a href="http://www.cyclobold.com">www.cyclobold.com</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+:root {
+            --primary: #2563eb;
+            --danger: #dc3545;
+            --dark: #1e293b;
+            --gray: #6c757d;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .denied-container {
+            max-width: 500px;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .denied-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            border-top: 4px solid var(--danger);
+        }
+        
+        .denied-icon {
+            font-size: 3.5rem;
+            color: var(--danger);
+            margin-bottom: 1.5rem;
+        }
+        
+        .denied-title {
+            font-weight: 700;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--danger);
+        }
+        
+        .denied-message {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .denied-email {
+            background-color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        .denied-actions {
+            margin-top: 2rem;
+        }
+        
+        .btn-return {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-return:hover {
+            background-color: #1a56db;
+            color: white;
+        }
+        
+        .security-notice {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }

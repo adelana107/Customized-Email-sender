@@ -1,0 +1,26 @@
+<!-- cyclo_mail/templates/emails/default.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .header { color: #4a6fa5; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Default</h2>
+    </div>
+    
+    <p>Dear {{ name }},</p>
+    
+    <p>Thank you for registering for <strong>{{ course.name }}</strong>!</p>
+    
+    <div class="details">
+        <p>Subject: {{ subject }}</p>
+        <p>Date: {{ date }}</p>
+    </div>
+    
+    <p>We'll contact you soon with more details.</p>
+</body>
+</html>

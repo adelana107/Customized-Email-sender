@@ -1,0 +1,675 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CycloMail | Secure Course Email Platform</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --cyclo-primary: #6366f1;
+            --cyclo-primary-dark: #4f46e5;
+            --cyclo-accent: #ec4899;
+            --cyclo-success: #10b981;
+            --cyclo-warning: #f59e0b;
+            --cyclo-danger: #ef4444;
+            --cyclo-dark: #1e293b;
+            --cyclo-gray: #64748b;
+            --cyclo-light: #f8fafc;
+            --cyclo-border: #e2e8f0;
+            --cyclo-gradient: linear-gradient(135deg, var(--cyclo-primary), var(--cyclo-primary-dark));
+            --cyclo-card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: var(--cyclo-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .cyclo-container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .cyclo-header {
+            background: var(--cyclo-gradient);
+            color: white;
+            padding: 4rem 0 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .cyclo-header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+        
+        .cyclo-header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+        
+        .cyclo-logo {
+            font-weight: 800;
+            font-size: 3rem;
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cyclo-logo span {
+            color: #fff;
+            position: relative;
+        }
+        
+        .cyclo-logo span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--cyclo-accent);
+            z-index: -1;
+            opacity: 0.7;
+            border-radius: 4px;
+            transform: rotate(-1deg);
+        }
+        
+        .cyclo-tagline {
+            font-weight: 300;
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-top: 0.75rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cyclo-card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: var(--cyclo-card-shadow);
+            overflow: hidden;
+            margin-bottom: 3rem;
+            background: white;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cyclo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cyclo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--cyclo-gradient);
+        }
+        
+        .cyclo-card-header {
+            padding: 1.8rem 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(248, 250, 252, 0.5);
+        }
+        
+        .cyclo-card-header h2 {
+            font-weight: 700;
+            color: var(--cyclo-dark);
+            margin: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cyclo-card-header h2 i {
+            margin-right: 12px;
+            color: var(--cyclo-primary);
+            background: rgba(99, 102, 241, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cyclo-card-body {
+            padding: 2.5rem;
+        }
+        
+        /* Form Styling */
+        .cyclo-form .form-group {
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+        
+        .cyclo-form label {
+            font-weight: 600;
+            color: var(--cyclo-dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cyclo-form label i {
+            margin-right: 8px;
+            font-size: 0.9rem;
+            color: var(--cyclo-gray);
+        }
+        
+        .cyclo-form .input-group-text {
+            background-color: white;
+            border-right: none;
+            color: var(--cyclo-primary);
+            transition: all 0.3s;
+        }
+        
+        .cyclo-form .form-control {
+            border-left: none;
+            border-radius: 10px;
+            padding: 14px 16px;
+            border: 1px solid var(--cyclo-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            background-color: white;
+        }
+        
+        .cyclo-form .form-control:focus {
+            border-color: var(--cyclo-primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        
+        .cyclo-form .form-control.is-invalid {
+            border-color: var(--cyclo-danger);
+            background-image: none;
+        }
+        
+        .cyclo-form .form-control.is-invalid:focus {
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+        }
+        
+        .cyclo-form textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .btn-cyclo {
+            background: var(--cyclo-gradient);
+            border: none;
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 10px;
+            color: white;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(67, 97, 238, 0.3), 0 2px 4px -1px rgba(67, 97, 238, 0.2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
+        }
+        
+        .btn-cyclo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(67, 97, 238, 0.3), 0 4px 6px -2px rgba(67, 97, 238, 0.2);
+            color: white;
+        }
+        
+        .btn-cyclo:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-cyclo i {
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        
+        .btn-cyclo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-cyclo:hover::before {
+            left: 100%;
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--cyclo-primary);
+            border-color: var(--cyclo-primary);
+        }
+        
+        /* Error Styling */
+        .alert-danger {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: var(--cyclo-dark);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--cyclo-danger);
+        }
+        
+        .invalid-feedback {
+            color: var(--cyclo-danger);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+        
+        /* Features Section */
+        .cyclo-features {
+            margin: 4rem 0;
+        }
+        
+        .feature-item {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--cyclo-primary);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+            transform-style: preserve-3d;
+        }
+        
+        .feature-item:hover .feature-icon {
+            transform: translateY(-5px) rotateY(15deg);
+            background: var(--cyclo-gradient);
+            color: white;
+        }
+        
+        .feature-item h3 {
+            font-weight: 700;
+            color: var(--cyclo-dark);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .feature-item p {
+            color: var(--cyclo-gray);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        .cyclo-footer {
+            background-color: var(--cyclo-dark);
+            color: white;
+            padding: 4rem 0 3rem;
+            margin-top: 6rem;
+            position: relative;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        .cyclo-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--cyclo-gradient);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cyclo-header {
+                padding: 3rem 0 2.5rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .cyclo-card-body {
+                padding: 1.8rem;
+            }
+            
+            .cyclo-logo {
+                font-size: 2.4rem;
+            }
+            
+            .cyclo-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .cyclo-footer {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="cyclo-header animate__animated animate__fadeIn">
+        <div class="container">
+            <h1 class="cyclo-logo">CYCLO<span>MAIL</span></h1>
+        </div>
+    </header>
+
+    <div class="cyclo-container">
+        <div class="cyclo-card animate__animated animate__fadeInUp">
+            <div class="cyclo-card-header">
+                <h2><i class="fas fa-paper-plane"></i> Send Email to Course Participants</h2>
+            </div>
+            <div class="cyclo-card-body">
+                {% if form.errors %}
+                    <div class="alert alert-danger animate__animated animate__shakeX">
+                        <strong>Please correct the following:</strong>
+                        <ul class="mb-0 mt-2">
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                
+                <form method="post" class="cyclo-form" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="{{ form.name.id_for_label }}"><i class="fas fa-user"></i> {{ form.name.label }}</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            {{ form.name }}
+                        </div>
+                        {% if form.name.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.name.errors|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="{{ form.email.id_for_label }}"><i class="fas fa-at"></i> {{ form.email.label }}</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            {{ form.email }}
+                        </div>
+                        <small class="text-muted">{{ form.email.help_text }}</small>
+                        {% if form.email.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.email.errors|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Subject Field -->
+                    <div class="form-group">
+                        <label for="{{ form.subject.id_for_label }}"><i class="fas fa-tag"></i> {{ form.subject.label }}</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                            {{ form.subject }}
+                        </div>
+                        {% if form.subject.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.subject.errors|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group">
+                        <label for="{{ form.message.id_for_label }}"><i class="fas fa-comment-dots"></i> {{ form.message.label }}</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                            {{ form.message }}
+                        </div>
+                        {% if form.message.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.message.errors|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Course Field -->
+                    <div class="form-group">
+                        <label for="{{ form.course.id_for_label }}"><i class="fas fa-book-open"></i> {{ form.course.label }}</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
+                            {{ form.course }}
+                        </div>
+                        {% if form.course.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.course.errors|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Terms Checkbox -->
+                    <div class="form-group form-check ps-1 mt-4">
+                        <div class="d-flex align-items-center">
+                            {{ form.agree_to_terms }}
+                            <label class="form-check-label ms-2" for="{{ form.agree_to_terms.id_for_label }}">
+                                {{ form.agree_to_terms.label }}
+                            </label>
+                        </div>
+                        {% if form.agree_to_terms.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.agree_to_terms.errors|join:", " }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-actions mt-4">
+                        <button type="submit" class="btn-cyclo" id="submitBtn">
+                            <i class="fas fa-paper-plane me-2"></i> Send Message
+                            <div class="spinner" id="spinner"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row cyclo-features text-center">
+            <div class="col-md-4 mb-4">
+                <div class="feature-item p-4 animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Military-Grade Security</h3>
+                    <p class="mb-0">End-to-end encryption with AES-256 to keep your communications private and protected against unauthorized access.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item p-4 animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast Delivery</h3>
+                    <p class="mb-0">Our globally distributed server network ensures your emails are delivered in milliseconds, anywhere in the world.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item p-4 animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>99.99% Uptime</h3>
+                    <p class="mb-0">Redundant systems with automatic failover guarantee your emails are always delivered when you need them.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="cyclo-footer animate__animated animate__fadeIn">
+        <div class="container text-center">
+            <p class="mb-3">© 2023 CycloMail. All rights reserved.</p>
+            <div class="social-links mb-4">
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-product-hunt"></i></a>
+            </div>
+            <p class="small text-muted">v2.1.0</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- WOW.js for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <script>
+        // Initialize WOW.js for scroll animations
+        new WOW().init();
+        
+        // Form submission handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.cyclo-form');
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            
+            if (form) {
+                form.addEventListener('submit', function() {
+                    submitBtn.disabled = true;
+                    spinner.style.display = 'inline-block';
+                    submitBtn.querySelector('i').style.opacity = '0.5';
+                });
+            }
+            
+            // Add floating label effect
+            const formControls = document.querySelectorAll('.form-control, .form-select');
+            
+            formControls.forEach(control => {
+                // Add focus/blur effects
+                control.addEventListener('focus', function() {
+                    this.parentElement.querySelector('.input-group-text').style.color = 'var(--cyclo-primary)';
+                    this.parentElement.querySelector('.input-group-text').style.backgroundColor = 'rgba(99, 102, 241, 0.05)';
+                });
+                
+                control.addEventListener('blur', function() {
+                    this.parentElement.querySelector('.input-group-text').style.color = '';
+                    this.parentElement.querySelector('.input-group-text').style.backgroundColor = '';
+                });
+                
+                // Add validation classes
+                if (control.classList.contains('is-invalid')) {
+                    control.parentElement.querySelector('.input-group-text').style.color = 'var(--cyclo-danger)';
+                }
+            });
+            
+            // Animate cards on hover
+            const cards = document.querySelectorAll('.cyclo-card, .feature-item');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.3s ease';
+                });
+            });
+            
+            // Auto-focus first field with error
+            const firstErrorField = document.querySelector('.is-invalid');
+            if (firstErrorField) {
+                setTimeout(() => {
+                    firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstErrorField.focus();
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>

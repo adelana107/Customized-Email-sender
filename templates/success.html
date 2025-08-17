@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sent Successfully | Cyclo Mail</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/success.css' %}">
+    
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    
+    <div class="success-container">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h2>Email Sent Successfully!</h2>
+        <p class="success-message">Your message has been delivered to the recipient's inbox.</p>
+        
+        <div class="button-group">
+            <a href="/" class="btn-cyclo">
+                <i class="fas fa-home me-2"></i> Back to Home
+            </a>
+            <a href="/send-email/" class="btn-outline-primary">
+                <i class="fas fa-envelope me-2"></i> Send Another
+            </a>
+        </div>
+        
+        <div class="support-link">
+            <p>Need immediate assistance? <a href="mailto:support@cyclomail.com"><i class="fas fa-life-ring me-1"></i> Contact Support</a></p>
+        </div>
+    </div>
+   <script src="{% static 'js/success.js' %}"></script>
+
+</body>
+</html>
